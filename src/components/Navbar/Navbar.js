@@ -1,23 +1,39 @@
-import React from "react";
-import { Navbar, Nav, NavDropdown } from "react-bootstrap";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import Burger from "./Burger";
 
-export default function NavbarPage() {
+export default function NavbarPage({ navLinks, background, hoverBackground }) {
+  const [hoverIndex, setHoverIndex] = useState(-1);
+  const [navOpen, setNavOpen] = useState(false);
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-      <Navbar.Brand href="#home">Erick Perez</Navbar.Brand>
-      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-      <Navbar.Collapse id="responsive-navbar-nav">
-        <Nav className="mr-auto">
-          <Nav.Link href="#"></Nav.Link>
-          <Nav.Link href="#"></Nav.Link>
-        </Nav>
-        <Nav>
-          <Nav.Link href="#deets">About me</Nav.Link>
-          <Nav.Link eventKey={2} href="#memes">
-            Projects
-          </Nav.Link>
-        </Nav>
-      </Navbar.Collapse>
-    </Navbar>
+    <nav>
+      <div className="logo">
+        <h3>Erick Perez</h3>
+      </div>
+      <ul className="nav-links">
+        {navLinks.map((eachLink, index) => {
+          return (
+            <li
+              onMouseEnter={() => setHoverIndex(index)}
+              onMouseLeave={() => setHoverIndex(-1)}
+              style={{
+                background:
+                  hoverIndex === index ? hoverBackground || "#999" : "",
+              }}
+            >
+              <Link key={index} to={eachLink.path}>
+                {eachLink.text}
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+      <Burger />
+      {/* <div className="burger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div> */}
+    </nav>
   );
 }

@@ -1,8 +1,101 @@
-.main {
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Space Mono", monospace;
+}
+body {
   background: url(images/bg-photo.png) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   height: 55rem;
+}
+
+nav {
+  display: relative; /* next to the other */
+  align-items: center;
+  min-height: 12vh;
+}
+
+.logo {
+  color: rgb(226, 226, 226);
+  letter-spacing: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 5%;
+  position: relative;
+  top: 6vh;
+}
+.nav-links a {
+  color: rgb(226, 226, 226);
+  text-decoration: none;
+  letter-spacing: 2px;
+  font-size: 20px;
+}
+
+.nav-links li {
+  list-style: none; /* remove dots */
+}
+
+.nav-active {
+  background-color: "#999";
+}
+
+.nav-links {
+  float: right;
+  display: flex;
+  margin-right: 5%;
+  width: 30%;
+  justify-content: space-between;
+}
+
+.burgeroff {
+  display: none;
+  margin-right: 5%;
+}
+
+.burgeron div {
+  cursor: pointer;
+  width: 25px;
+  height: 2px;
+  background-color: rgb(226, 226, 226);
+  margin: 5px;
+}
+@media screen and (max-width: 1200px) {
+  .nav-links {
+    width: 38%;
+  }
+}
+
+@media screen and (max-width: 786px) {
+  body {
+    overflow-x: hidden;
+  }
+  .nav-links {
+    position: absolute;
+    margin-right: 0px;
+    right: 0px;
+    height: 138vh;
+    top: 12vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.678);
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+  }
+  .nav-links li {
+    opacity: 0;
+  }
+  .burgeron {
+    display: block;
+    float: right;
+  }
+}
+
+.nav-active {
+  transform: translateX(0%);
 }
