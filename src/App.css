@@ -4,19 +4,51 @@
   box-sizing: border-box;
   font-family: "Space Mono", monospace;
 }
-body {
+.App {
   background: url(images/bg-photo.png) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 55rem;
+  min-height: 100vh;
 }
 
-nav {
-  display: relative; /* next to the other */
-  align-items: center;
+/*  =================================== NAVBAR ================================ */
+
+nav.responsive-nav {
+  width: 100%;
   min-height: 12vh;
+  position: sticky;
+  top: 0;
+  display: inline-flex;
+  align-items: center;
+}
+
+nav.responsive-nav > ul {
+  display: flex;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
+  height: 100%;
+  align-items: center;
+  margin-right: 5%;
+  margin-left: auto;
+}
+
+nav > ul > li {
+  list-style-type: none;
+  padding: 20px;
+  float: right;
+}
+
+nav > ul > li > a {
+  display: flex;
+  justify-content: flex-end;
+  font-weight: bold;
+}
+
+a:link {
+  text-decoration: none !important;
 }
 
 .logo {
@@ -25,77 +57,85 @@ nav {
   font-size: 18px;
   font-weight: bold;
   margin-left: 5%;
-  position: relative;
-  top: 6vh;
-}
-.nav-links a {
-  color: rgb(226, 226, 226);
-  text-decoration: none;
-  letter-spacing: 2px;
-  font-size: 20px;
+  width: max-content;
 }
 
-.nav-links li {
-  list-style: none; /* remove dots */
-}
-
-.nav-active {
-  background-color: "#999";
-}
-
-.nav-links {
+.logo-nav {
+  color: white;
+  cursor: pointer;
   float: right;
-  display: flex;
-  margin-right: 5%;
-  width: 30%;
-  justify-content: space-between;
-}
-
-.burgeroff {
   display: none;
-  margin-right: 5%;
 }
-
-.burgeron div {
+figure {
+  cursor: pointer;
+  display: none;
+}
+.active {
   cursor: pointer;
   width: 25px;
   height: 2px;
-  background-color: rgb(226, 226, 226);
   margin: 5px;
 }
+
 @media screen and (max-width: 1200px) {
-  .nav-links {
+  nav.responsive-nav > ul > li {
     width: 38%;
   }
 }
 
-@media screen and (max-width: 786px) {
+@media screen and (max-width: 760px) {
   body {
     overflow-x: hidden;
   }
-  .nav-links {
-    position: absolute;
-    margin-right: 0px;
-    right: 0px;
-    height: 138vh;
-    top: 12vh;
-    display: flex;
+  nav.responsive-nav > ul {
+    height: 100%;
+    width: 150px;
+    position: fixed;
+    right: 0;
     flex-direction: column;
-    align-items: center;
+    top: 14vh;
+    margin-right: 0%;
+    transition: 3000ms ease all;
+  }
+
+  .li-desactive {
+    height: 100%;
+    width: 320px;
+    left: -320;
+    position: fixed;
+    right: 0;
+    flex-direction: column;
+    top: 14vh;
+    margin-right: 0%;
+    display: none;
+  }
+
+  nav.responsive-nav > ul > li {
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.678);
-    transform: translateX(100%);
-    transition: transform 0.5s ease-in;
+    padding-right: 0;
+    padding-left: 0;
+    list-style-type: none;
   }
-  .nav-links li {
-    opacity: 0;
+
+  nav.responsive-nav > ul > li > a {
+    padding-right: 10%;
   }
-  .burgeron {
+
+  .logo-nav {
+    width: 100%;
+    color: white;
+    cursor: pointer;
     display: block;
-    float: right;
+  }
+
+  figure {
+    cursor: pointer;
+    display: block;
+    position: relative;
+    margin-left: auto;
+    margin-right: 5%;
+    margin-top: 2%;
   }
 }
 
-.nav-active {
-  transform: translateX(0%);
-}
+/*  =================================== TYPING EFFECT ================================ */

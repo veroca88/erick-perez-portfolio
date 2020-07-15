@@ -1,39 +1,41 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Burger from "./Burger";
 
-export default function NavbarPage({ navLinks, background, hoverBackground }) {
+export default function NavbarPage({
+  navLinks,
+  background,
+  hoverBackground,
+  linkColor,
+  textHover,
+}) {
   const [hoverIndex, setHoverIndex] = useState(-1);
   const [navOpen, setNavOpen] = useState(false);
   return (
-    <nav>
+    <nav className="responsive-nav">
       <div className="logo">
         <h3>Erick Perez</h3>
       </div>
-      <ul className="nav-links">
+      <figure onClick={() => setNavOpen(!navOpen)}>
+        <i className="fas fa-server fa-2x logo-nav"></i>
+      </figure>
+      <ul style={{ background }}>
         {navLinks.map((eachLink, index) => {
           return (
             <li
+              className={navOpen ? "" : "li-desactive"}
               onMouseEnter={() => setHoverIndex(index)}
               onMouseLeave={() => setHoverIndex(-1)}
               style={{
-                background:
-                  hoverIndex === index ? hoverBackground || "#999" : "",
+                background: hoverIndex === index ? textHover || "#000" : "",
               }}
             >
-              <Link key={index} to={eachLink.path}>
+              <Link style={{ color: linkColor }} key={index} to={eachLink.path}>
                 {eachLink.text}
               </Link>
             </li>
           );
         })}
       </ul>
-      <Burger />
-      {/* <div className="burger">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div> */}
     </nav>
   );
 }
