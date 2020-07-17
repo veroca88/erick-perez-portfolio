@@ -118,7 +118,7 @@ figure {
   }
 
   nav.responsive-nav > ul > li > a {
-    padding-right: 10%;
+    padding-right: 25%;
   }
 
   .logo-nav {
@@ -139,3 +139,24 @@ figure {
 }
 
 /*  =================================== TYPING EFFECT ================================ */
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  margin-top: 28vh;
+}
+
+.text-type {
+  color: white;
+  font-size: 24px;
+}
+
+/*  =================================== PROJECTS PAGE ================================ */
+
+.projects {
+  background-color: #fff;
+  height: 70vh;
+  margin: 5%;
+  box-shadow: 5px 10px #888888;
+}
