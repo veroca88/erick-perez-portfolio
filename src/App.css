@@ -80,6 +80,9 @@ figure {
   body {
     overflow-x: hidden;
   }
+  nav {
+    background-color: rgb(29, 29, 29);
+  }
   nav.responsive-nav > ul {
     height: 100%;
     width: 210px;
@@ -132,6 +135,9 @@ figure {
 }
 
 @media screen and (max-width: 1200px) {
+  nav {
+    background-color: rgb(29, 29, 29);
+  }
   nav.responsive-nav > ul > li {
     width: 100%;
   }
@@ -140,13 +146,14 @@ figure {
     flex-direction: column;
     align-items: center;
   }
-  /* nav.responsive-nav {
-    background-color: rgba(0, 0, 0, 0.911);
-  } */
 }
 
 @media (max-width: 1700px) {
   #rockets {
+    width: 90%;
+  }
+
+  #about-me {
     width: 90%;
   }
 }
@@ -194,6 +201,8 @@ figure {
 
 .underline {
   text-decoration: underline;
+  margin-top: 2%;
+  margin-bottom: 2%;
 }
 
 .description {
@@ -203,6 +212,11 @@ figure {
 hr {
   margin-top: 5%;
   margin-bottom: 5%;
+}
+
+.description-1 {
+  font-size: 1.2rem;
+  margin-top: 2%;
 }
 
 /*  =================================== ANIMATION ROCKET ================================ */
@@ -230,5 +244,37 @@ hr {
   }
   to {
     transform: rotateY(5deg);
+  }
+}
+
+/*  =================================== ANIMATION ABOUT-ME ================================ */
+
+#plant {
+  animation: plants 6s steps(60, end) infinite alternate-reverse;
+  transform-origin: bottom;
+  transform-box: fill-box;
+}
+
+@keyframes plants {
+  from {
+    transform: rotateZ(-0deg);
+  }
+  to {
+    transform: rotateZ(8deg);
+  }
+}
+
+#notes {
+  animation: notes 3s steps(60, end) infinite alternate;
+  /* transform-origin: bottom; */
+  transform-box: fill-box;
+}
+
+@keyframes notes {
+  from {
+    transform: rotateX(20deg);
+  }
+  to {
+    transform: rotateX(0deg);
   }
 }
