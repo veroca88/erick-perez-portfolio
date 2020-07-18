@@ -13,7 +13,7 @@ export default function NavbarPage({
   return (
     <nav className="responsive-nav">
       <div className="logo">
-        <h3>Erick Perez</h3>
+        <h1>Erick Perez</h1>
       </div>
       <figure onClick={() => setNavOpen(!navOpen)}>
         <i className="fas fa-server fa-2x logo-nav"></i>

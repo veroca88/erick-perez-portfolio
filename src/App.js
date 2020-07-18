@@ -5,7 +5,7 @@ import { Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar/Navbar";
 import Main from "./components/pages/Main";
-import Projects from "./components/pages/Projects";
+import Experience from "./components/pages/Experience";
 import About from "./components/pages/About";
 
 const navLinks = [
@@ -14,8 +14,8 @@ const navLinks = [
     path: "/home",
   },
   {
-    text: "Projects",
-    path: "/projects",
+    text: "Experience",
+    path: "/experience",
   },
   {
     text: "About",
@@ -31,7 +31,7 @@ function App() {
         textHover="rgba(201, 201, 201, 0.32)"
       />
       <Route path="/home" component={Main} />
-      <Route path="/projects" component={Projects} />
+      <Route path="/experience" component={Experience} />
       <Route path="/about" component={About} />
     </div>
   );

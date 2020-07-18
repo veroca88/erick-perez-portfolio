@@ -17,7 +17,7 @@
 
 nav.responsive-nav {
   width: 100%;
-  min-height: 12vh;
+  min-height: 14vh;
   position: sticky;
   top: 0;
   display: inline-flex;
@@ -44,7 +44,7 @@ nav > ul > li {
 nav > ul > li > a {
   display: flex;
   justify-content: flex-end;
-  font-weight: bold;
+  font-size: 24px;
 }
 
 a:link {
@@ -54,8 +54,7 @@ a:link {
 .logo {
   color: rgb(226, 226, 226);
   letter-spacing: 5px;
-  font-size: 18px;
-  font-weight: bold;
+  font-weight: bolder;
   margin-left: 5%;
   width: max-content;
 }
@@ -77,19 +76,13 @@ figure {
   margin: 5px;
 }
 
-@media screen and (max-width: 1200px) {
-  nav.responsive-nav > ul > li {
-    width: 38%;
-  }
-}
-
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 830px) {
   body {
     overflow-x: hidden;
   }
   nav.responsive-nav > ul {
     height: 100%;
-    width: 150px;
+    width: 210px;
     position: fixed;
     right: 0;
     flex-direction: column;
@@ -138,6 +131,26 @@ figure {
   }
 }
 
+@media screen and (max-width: 1200px) {
+  nav.responsive-nav > ul > li {
+    width: 100%;
+  }
+  .container-projects {
+    display: block;
+    flex-direction: column;
+    align-items: center;
+  }
+  /* nav.responsive-nav {
+    background-color: rgba(0, 0, 0, 0.911);
+  } */
+}
+
+@media (max-width: 1700px) {
+  #rockets {
+    width: 90%;
+  }
+}
+
 /*  =================================== TYPING EFFECT ================================ */
 
 .container {
@@ -149,14 +162,73 @@ figure {
 
 .text-type {
   color: white;
-  font-size: 24px;
+  font-size: 3rem;
 }
 
-/*  =================================== PROJECTS PAGE ================================ */
+/*  =================================== EXPERIENCE PAGE ================================ */
+.container-projects {
+  display: flex;
+  height: auto;
+  background-color: rgba(32, 32, 32, 0.952);
+}
 
+.container-projects > div {
+  margin: 10% 5%;
+}
 .projects {
-  background-color: #fff;
-  height: 70vh;
-  margin: 5%;
-  box-shadow: 5px 10px #888888;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.experience-info {
+  width: 60vw;
+  color: rgb(230, 230, 230);
+  text-align: justify;
+}
+
+.title {
+  line-height: 2;
+  font-weight: bold;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.description {
+  font-size: 1.2rem;
+}
+
+hr {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+/*  =================================== ANIMATION ROCKET ================================ */
+
+#white_clouds {
+  animation: clouds 2s ease-in-out infinite alternate;
+}
+
+@keyframes clouds {
+  from {
+    transform: rotateX(0deg);
+  }
+  to {
+    transform: rotateX(20deg);
+  }
+}
+
+#turbins_right {
+  animation: t-rigth 1s ease-out infinite alternate;
+}
+
+@keyframes t-rigth {
+  from {
+    transform: rotateY();
+  }
+  to {
+    transform: rotateY(5deg);
+  }
 }
