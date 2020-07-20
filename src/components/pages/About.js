@@ -7,7 +7,7 @@ export default function About() {
         <svg
           width="512"
           height="420"
-          ID="about-me"
+          id="about-me"
           viewBox="0 0 1005 841"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
