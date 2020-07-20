@@ -132,6 +132,10 @@ figure {
     margin-right: 5%;
     margin-top: 2%;
   }
+
+  .text-type {
+    font-size: 2rem;
+  }
 }
 
 @media screen and (max-width: 1200px) {
@@ -154,7 +158,7 @@ figure {
   }
 
   #about-me {
-    width: 90%;
+    width: 80%;
   }
 }
 
