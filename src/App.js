@@ -11,7 +11,7 @@ import About from "./components/pages/About";
 const navLinks = [
   {
     text: "Home",
-    path: "/home",
+    path: "/",
   },
   {
     text: "Experience",
@@ -30,9 +30,9 @@ function App() {
         linkColor="#fff"
         textHover="rgba(201, 201, 201, 0.32)"
       />
-      <Route path="/home" component={Main} />
-      <Route path="/experience" component={Experience} />
-      <Route path="/about" component={About} />
+      <Route exact path="/" component={Main} />
+      <Route exact path="/experience" component={Experience} />
+      <Route exact path="/about" component={About} />
     </div>
   );
 }
