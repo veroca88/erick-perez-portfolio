@@ -11,7 +11,7 @@ import About from "./components/pages/About";
 const navLinks = [
   {
     text: "Home",
-    path: "/",
+    path: "/erick-perez-portfolio",
   },
   {
     text: "Experience",
