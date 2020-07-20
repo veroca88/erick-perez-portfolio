@@ -13,7 +13,9 @@ export default function NavbarPage({
   return (
     <nav className="responsive-nav">
       <div className="logo">
-        <h1>Erick Perez</h1>
+        <Link style={{ color: linkColor }} to="/erick-perez-portfolio">
+          <h1>Erick Perez</h1>
+        </Link>
       </div>
       <figure onClick={() => setNavOpen(!navOpen)}>
         <i className="fas fa-server fa-2x logo-nav"></i>
