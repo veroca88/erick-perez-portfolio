@@ -80,6 +80,9 @@ figure {
   body {
     overflow-x: hidden;
   }
+  .form-message {
+    width: 100% !important;
+  }
   nav {
     background-color: rgb(29, 29, 29);
   }
@@ -152,7 +155,7 @@ figure {
   }
 }
 
-@media (max-width: 1700px) {
+@media screen and (max-width: 1700px) {
   #rockets {
     width: 90%;
   }
@@ -161,19 +164,54 @@ figure {
     width: 80%;
   }
 }
+/*  =================================== MAIN PAGE ================================ */
 
-/*  =================================== TYPING EFFECT ================================ */
+/*  ............. TYPING EFFECT .................... */
 
 .container {
   display: flex;
   justify-content: center;
   align-self: center;
-  margin-top: 28vh;
+  margin-top: 18vh;
 }
 
 .text-type {
   color: white;
   font-size: 2.4rem;
+}
+
+/*  ............. BUTTON CONTACT ME .................... */
+
+.button-contact {
+  margin-top: 25vh;
+  text-align: center;
+}
+
+.btn {
+  -webkit-border-radius: 2;
+  -moz-border-radius: 2;
+  border-radius: 2px;
+  letter-spacing: 2px;
+  color: #000000;
+  font-size: 24px;
+  font-weight: bold;
+  background: #ffffff;
+  padding: 10px 20px;
+  border: solid #292929 3px;
+  /* border: solid #000000 2px; */
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #c9c9c9;
+  text-decoration: none;
+}
+
+.sm {
+  font-size: 20px !important;
+  padding: 5px 5px !important;
+  margin-left: 20vh;
+  margin-top: 5vh;
 }
 
 /*  =================================== EXPERIENCE PAGE ================================ */
@@ -221,6 +259,47 @@ hr {
 .description-1 {
   font-size: 1.2rem;
   margin-top: 2%;
+}
+
+/*  =================================== MODAL ================================ */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.form-message {
+  background: white;
+  border-radius: 5px;
+  width: 30%;
+  height: auto;
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.contact-me-form {
+  display: flex;
+  flex-direction: column;
+  padding: 5%;
+  align-items: flex-start;
+}
+
+.label {
+  font-size: 3vh;
+  justify-content: flex-start;
+  margin-top: 3vh;
+}
+
+.input {
+  width: 100%;
 }
 
 /*  =================================== ANIMATION ROCKET ================================ */

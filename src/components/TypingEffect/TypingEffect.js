@@ -9,13 +9,13 @@ export default function TypingEffect({ word }) {
       wrapper="b"
       steps={[
         "System Administrator",
-        1000,
+        3000,
         "Devops",
-        1000,
+        3000,
         "Redhat",
-        1000,
+        3000,
         "Network",
-        1000,
+        3000,
       ]}
     />
   );
