@@ -24,6 +24,7 @@ export default function NavbarPage({
         {navLinks.map((eachLink, index) => {
           return (
             <li
+              key={index}
               className={navOpen ? "" : "li-desactive"}
               onMouseEnter={() => setHoverIndex(index)}
               onMouseLeave={() => setHoverIndex(-1)}
