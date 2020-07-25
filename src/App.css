@@ -75,6 +75,7 @@ figure {
   height: 2px;
   margin: 5px;
 }
+/*  =================================== @MEDIA QUERY ================================ */
 
 @media screen and (max-width: 830px) {
   body {
@@ -82,6 +83,7 @@ figure {
   }
   .form-message {
     width: 100% !important;
+    margin: 0 !important;
   }
   nav {
     background-color: rgb(29, 29, 29);
@@ -188,6 +190,7 @@ figure {
 }
 
 .btn {
+  cursor: pointer;
   -webkit-border-radius: 2;
   -moz-border-radius: 2;
   border-radius: 2px;
@@ -198,7 +201,6 @@ figure {
   background: #ffffff;
   padding: 10px 20px;
   border: solid #292929 3px;
-  /* border: solid #000000 2px; */
   text-decoration: none;
 }
 
@@ -208,6 +210,7 @@ figure {
 }
 
 .sm {
+  cursor: pointer;
   font-size: 20px !important;
   padding: 5px 5px !important;
   margin-left: 20vh;
@@ -263,26 +266,29 @@ hr {
 
 /*  =================================== MODAL ================================ */
 
-.overlay {
+/* .overlay {
   position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.3);
-}
+} */
 
 .form-message {
+  display: flex;
+  justify-content: center;
   background: white;
   border-radius: 5px;
-  width: 30%;
-  height: auto;
-  padding: 20px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
+  width: 40%;
+  margin: 5% 30%;
+  /* position: absolute; */
+  /* left: 20%; */
+  /* height: auto; */
+  /* padding: 20px; */
+  /* top: 50%; */
+  /* transform: translate(-50%, -50%);
+  z-index: 1; */
 }
 
 .contact-me-form {
