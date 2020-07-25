@@ -9,10 +9,10 @@ const service = axios.create({
 
 const CONTACTME_SERVICE = {
   // userData is a placeholder (represents the user's inputs in the signup and login form)
-  signup(userData) {
-    console.log(".........", process.env);
-    // const { username, email, password } = req.body; <===> userData
-    return service.post("/api/contact", userData);
+  message(userData) {
+    console.log(".........", userData);
+    // const { username, email, password } = req.body;
+    return service.post("/api/contact-me", userData);
   },
 };
 
