@@ -22,10 +22,14 @@ export default function Contact() {
       email: message.email,
       message: message.message,
     };
-    axios.post(urlApi, data);
-    console.log("DATA", data);
+    CONTACTME_SERVICE.message(data);
     setMessage(data);
     setOnSubmitting(false);
+    resetForm(event);
+  };
+
+  const resetForm = (e) => {
+    e.target.reset(e);
   };
 
   const handleChange = (e) => {
@@ -77,7 +81,6 @@ export default function Contact() {
             type="text"
             placeholder="Enter your message"
           />
-          {/* {message && <div className="error-message">{message}</div>} */}
           <button className="btn sm">Send message!</button>
         </form>
       </div>
