@@ -12,6 +12,8 @@ export default function TypingEffect({ word }) {
         3000,
         "Devops",
         3000,
+        "Problem Solving",
+        3000,
         "Redhat",
         3000,
         "Network",
