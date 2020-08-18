@@ -10,6 +10,10 @@ export default function NavbarPage({
 }) {
   const [hoverIndex, setHoverIndex] = useState(-1);
   const [navOpen, setNavOpen] = useState(false);
+
+  function closeNav() {
+    setNavOpen(!navOpen);
+  }
   return (
     <nav className="responsive-nav">
       <div className="logo">
@@ -24,6 +28,7 @@ export default function NavbarPage({
         {navLinks.map((eachLink, index) => {
           return (
             <li
+              onClick={closeNav}
               key={index}
               className={navOpen ? "" : "li-desactive"}
               onMouseEnter={() => setHoverIndex(index)}
