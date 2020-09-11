@@ -235,7 +235,7 @@ export default function About() {
       </div>
       <div className="experience-info">
         <h4>
-          I'm passionate and performance driven System Administrator with 10
+          I'm passionate and performance driven System Administrator with 7
           years of experience in IT. GNU/Linux and MS/Windows certified.
           Extensive interpersonal and communication skills with proficiency in
           spanish and english languages. I work well under pressure,

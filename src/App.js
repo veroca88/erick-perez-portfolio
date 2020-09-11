@@ -35,7 +35,7 @@ function App() {
         linkColor="#fff"
         textHover="rgba(201, 201, 201, 0.32)"
       />
-      <Route exact path="/erick-perez-portfolio" component={Main} />
+      <Route exact path="/" component={Main} />
       <Route exact path="/experience" component={Experience} />
       <Route exact path="/about" component={About} />
       <Route exact path="/contact-me" component={Contact} />
