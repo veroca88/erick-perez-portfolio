@@ -17,7 +17,7 @@ export default function NavbarPage({
   return (
     <nav className="responsive-nav">
       <div className="logo">
-        <Link style={{ color: linkColor }} to="/erick-perez-portfolio">
+        <Link style={{ color: linkColor }} to="/">
           <h1>Erick Perez</h1>
         </Link>
       </div>
