@@ -10,10 +10,6 @@ import About from "./components/pages/About";
 import Contact from "./components/pages/Contact";
 
 const navLinks = [
-  // {
-  //   text: "Home",
-  //   path: "/erick-perez-portfolio",
-  // },
   {
     text: "Experience",
     path: "/experience",
