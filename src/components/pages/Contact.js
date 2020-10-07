@@ -12,10 +12,12 @@ export default function Contact() {
   const [message, setMessage] = useState({ initialValues });
   const [onSubmitting, setOnSubmitting] = useState(false);
   const [values, setValues] = useState({});
-  const urlApi = "http://localhost:3001/api/contact-me";
+  const [error, setError] = useState("");
 
   const saveMessage = (event) => {
-    setOnSubmitting(true);
+    !event.target.value
+      ? setError("Please fill all the required fields")
+      : setOnSubmitting(true);
     event.preventDefault();
     const data = {
       subject: message.subject,
@@ -34,13 +36,14 @@ export default function Contact() {
 
   const handleChange = (e) => {
     e.persist();
-    setMessage({ ...message, [e.target.name]: e.target.value });
+    !e.target.value
+      ? setError(
+          `Please fill all the required fields (You missed ${e.target.name}).`
+        )
+      : setMessage({ ...message, [e.target.name]: e.target.value });
   };
   return (
     <>
-      {/* <div className="container-projects"> */}
-      {/* <div className="projects"> */}
-      {/* <div className="overlay"> */}
       <div className="form-message">
         <form onSubmit={saveMessage} className="contact-me-form">
           <label htmlFor="subject" className="label">
@@ -81,12 +84,10 @@ export default function Contact() {
             type="text"
             placeholder="Enter your message"
           />
+          {error && <span>{error}</span>}
           <button className="btn sm">Send message!</button>
         </form>
       </div>
-      {/* </div> */}
-      {/* </div> */}
-      {/* </div> */}
     </>
   );
 }
