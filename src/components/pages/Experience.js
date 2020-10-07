@@ -14,7 +14,7 @@ export default function Projects() {
           xmlns="http://www.w3.org/2000/svg"
         >
           {/* <rect width="1066" height="774" fill="#E5E5E5" /> */}
-          <g clip-path="url(#clip0)">
+          <g clipPath="url(#clip0)">
             <path
               id="Vector"
               opacity="0.1"

@@ -33,9 +33,11 @@ nav.responsive-nav > ul {
   align-items: center;
   margin-right: 5%;
   margin-left: auto;
+  z-index: 3;
 }
 
 nav > ul > li {
+  z-index: 3;
   list-style-type: none;
   padding: 20px;
   float: right;
@@ -45,6 +47,7 @@ nav > ul > li > a {
   display: flex;
   justify-content: flex-end;
   font-size: 24px;
+  z-index: 3;
 }
 
 a:link {
@@ -64,6 +67,7 @@ a:link {
   cursor: pointer;
   float: right;
   display: none;
+  z-index: 3;
 }
 figure {
   cursor: pointer;
@@ -84,19 +88,21 @@ figure {
   .form-message {
     width: 100% !important;
     margin: 0 !important;
+    z-index: 0;
   }
   nav {
     background-color: rgb(29, 29, 29);
   }
   nav.responsive-nav > ul {
-    height: 100%;
+    height: auto;
     width: 210px;
     position: fixed;
     right: 0;
     flex-direction: column;
-    top: 14vh;
+    top: 14.3vh;
     margin-right: 0%;
     transition: 3000ms ease all;
+    background-color: rgba(58, 58, 58, 0.787);
   }
 
   .li-desactive {
@@ -282,13 +288,14 @@ hr {
   border-radius: 5px;
   width: 40%;
   margin: 5% 30%;
+  z-index: 0;
   /* position: absolute; */
   /* left: 20%; */
   /* height: auto; */
   /* padding: 20px; */
   /* top: 50%; */
   /* transform: translate(-50%, -50%);
-  z-index: 1; */
+   */
 }
 
 .contact-me-form {
