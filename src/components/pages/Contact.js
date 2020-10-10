@@ -1,81 +1,72 @@
 import React, { useState, useEffect } from "react";
-// import useContactMeForm from "../Forms/ContactMeForm";
 import CONTACTME_SERVICE from "../services/ContactMeService";
-import axios from "axios";
+import { useForm } from "react-hook-form";
 
 export default function Contact() {
+  const { register, handleSubmit, watch, errors } = useForm();
+
   const initialValues = {
     subject: "",
     email: "",
     message: "",
   };
-  const [message, setMessage] = useState({ initialValues });
-  const [onSubmitting, setOnSubmitting] = useState(false);
-  const [values, setValues] = useState({});
-  const [error, setError] = useState("");
 
-  const saveMessage = (event) => {
-    !event.target.value
-      ? setError("Please fill all the required fields")
-      : setOnSubmitting(true);
-    event.preventDefault();
-    const data = {
-      subject: message.subject,
-      email: message.email,
-      message: message.message,
+  const saveMessage = (data) => {
+    const filledForm = {
+      subject: data.subject,
+      email: data.email,
+      message: data.message,
     };
-    CONTACTME_SERVICE.message(data);
-    setMessage(data);
-    setOnSubmitting(false);
-    resetForm(event);
+    CONTACTME_SERVICE.message(filledForm);
   };
 
   const resetForm = (e) => {
     e.target.reset(e);
   };
 
-  const handleChange = (e) => {
-    e.persist();
-    !e.target.value
-      ? setError(
-          `Please fill all the required fields (You missed ${e.target.name}).`
-        )
-      : setMessage({ ...message, [e.target.name]: e.target.value });
-  };
   return (
     <>
       <div className="form-message">
-        <form onSubmit={saveMessage} className="contact-me-form">
+        <form onSubmit={handleSubmit(saveMessage)} className="contact-me-form">
           <label htmlFor="subject" className="label">
             Subject:
           </label>
           <input
-            onChange={handleChange}
-            value={values.subject}
+            // onChange={handleChange}
+            // onClick={handleChange}
+            // value={values.subject}
+            aria-invalid={errors.name ? "true" : "false"}
             className="input"
             name="subject"
             type="text"
             placeholder="Subject"
+            // required
+            ref={register({ required: true })}
           ></input>
+          {errors.subject && <span>This field is required</span>}
 
           <label htmlFor="email" className="label">
             Email:
           </label>
           <input
-            onChange={handleChange}
-            value={values.email}
+            // onChange={handleChange}
+            // onClick={handleChange}
+            // value={values.email}
             className="input"
             name="email"
             type="email"
             placeholder="Email"
+            ref={register({ required: true })}
           />
+          {errors.email && <span>This field is required</span>}
 
           <label htmlFor="message" className="label">
             Message:
           </label>
           <textarea
-            onChange={handleChange}
-            value={values.message}
+            // onChange={handleChange}
+            // onClick={handleChange}
+            // value={values.message}
             className="input"
             rows="5"
             cols="50"
@@ -83,8 +74,9 @@ export default function Contact() {
             name="message"
             type="text"
             placeholder="Enter your message"
+            ref={register({ required: true })}
           />
-          {error && <span>{error}</span>}
+          {errors.message && <span>This field is required</span>}
           <button className="btn sm">Send message!</button>
         </form>
       </div>
