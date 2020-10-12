@@ -1,26 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import CONTACTME_SERVICE from "../services/ContactMeService";
 import { useForm } from "react-hook-form";
 
 export default function Contact() {
-  const { register, handleSubmit, watch, errors } = useForm();
+  const { register, handleSubmit, watch, errors } = useForm({
+    defaultValues: {
+      subject: "",
+      email: "",
+      message: "",
+    },
+  });
 
-  const initialValues = {
-    subject: "",
-    email: "",
-    message: "",
-  };
-
-  const saveMessage = (data) => {
+  const saveMessage = (data, e) => {
     const filledForm = {
       subject: data.subject,
       email: data.email,
       message: data.message,
     };
     CONTACTME_SERVICE.message(filledForm);
-  };
-
-  const resetForm = (e) => {
     e.target.reset(e);
   };
 
@@ -32,15 +29,11 @@ export default function Contact() {
             Subject:
           </label>
           <input
-            // onChange={handleChange}
-            // onClick={handleChange}
-            // value={values.subject}
             aria-invalid={errors.name ? "true" : "false"}
             className="input"
             name="subject"
             type="text"
             placeholder="Subject"
-            // required
             ref={register({ required: true })}
           ></input>
           {errors.subject && <span>This field is required</span>}
@@ -49,9 +42,6 @@ export default function Contact() {
             Email:
           </label>
           <input
-            // onChange={handleChange}
-            // onClick={handleChange}
-            // value={values.email}
             className="input"
             name="email"
             type="email"
@@ -64,9 +54,6 @@ export default function Contact() {
             Message:
           </label>
           <textarea
-            // onChange={handleChange}
-            // onClick={handleChange}
-            // value={values.message}
             className="input"
             rows="5"
             cols="50"
