@@ -11,7 +11,7 @@ const CONTACTME_SERVICE = {
   // userData is a placeholder (represents the user's inputs in the signup and login form)
   message(userData) {
     console.log(".........", userData);
-    return service.post(`${baseURL}/api/contact-me`, userData);
+    return service.post(`${baseURL}api/contact-me`, userData);
   },
 };
 
